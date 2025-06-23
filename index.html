@@ -44,6 +44,23 @@
       font-weight: bold;
       font-size: 0.95em;
       gap: 6px;
+      transition: color 0.3s; /* Smooth transition for color change */
+    }
+
+    .nav-icons a:active,
+    .nav-icons a:hover {
+      color: #1a2525; /* Body background color */
+    }
+
+    /* Ensure SVG paths inside links also change color */
+    .nav-icons a svg path {
+      fill: #00ff95; /* Default fill color */
+      transition: fill 0.3s; /* Smooth transition for SVG fill */
+    }
+
+    .nav-icons a:active svg path,
+    .nav-icons a:hover svg path {
+      fill: #1a2525; /* Body background color on hover/active */
     }
 
     .nav-icons a:hover {
