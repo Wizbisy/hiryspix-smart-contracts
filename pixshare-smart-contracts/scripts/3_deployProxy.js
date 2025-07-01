@@ -9,7 +9,7 @@ const wallet    = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
 (async () => {
   const ProxyFactory = new ethers.ContractFactory(proxyArt.abi, proxyArt.evm.bytecode.object, wallet);
 
-  const logicAddr = process.argv[2]; // pass from CLI
+  const logicAddr = process.argv[2]; 
   if (!ethers.isAddress(logicAddr)) throw new Error('pass logic address');
 
   const tx = ProxyFactory.getDeployTransaction(
