@@ -6,7 +6,7 @@ import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/utils/CountersUpgradeable.sol";
 
-/// @title  PixShare – Upgradeable PostBoard V1 (Irys native tips)
+/// @title  PixShare – Upgradeable PostBoard V1 
 contract PostBoardUpgradeable is
     Initializable,
     UUPSUpgradeable,
@@ -19,11 +19,11 @@ contract PostBoardUpgradeable is
     ================================================================ */
     struct Post {
         address author;
-        bytes32[] irysTxIds;  // multi‑image array
+        bytes32[] irysTxIds;
         string caption;
         uint64 timestamp;
         uint32 likes;
-        uint256 totalTips;    // in native IRYS wei
+        uint256 totalTips;   
         bool deleted;
     }
 
@@ -57,7 +57,7 @@ contract PostBoardUpgradeable is
     ================================================================ */
     /// @custom:oz-upgrades-unsafe-allow constructor
     constructor() {
-        _disableInitializers(); // proxy pattern
+        _disableInitializers();
     }
 
     /// @param initialOwner  address that can upgrade the contract
